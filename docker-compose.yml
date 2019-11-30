@@ -9,7 +9,9 @@ services:
     environment:
       - ENV=development
       - PORT=4000
-      - DB=mongodb://mongodb:27017/todoDev
+      - MONGO_HOST=mongodb
+      - MONGO_PORT=27017
+      # - DB=mongodb://mongodb:27017/gamify-life
   mongodb:
     image: mongo:latest
     container_name: "mongodb"
@@ -20,7 +22,8 @@ services:
       - ./data/db:/usr/data/db
     ports:
       - 27017:27017
-    command: mongod --smallfiles --logpath=/dev/null # --quiet
+    command: mongod --logpath=/dev/null # --quiet
+    # command: mongod --smallfiles --logpath=/dev/null # --quiet
 
 
 networks:
