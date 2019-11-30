@@ -1,13 +1,9 @@
 import os
-from flask import Flask
+from app import app, contollers
 
-app = Flask(__name__)
 
 PORT = os.environ.get('PORT')
 
-@app.route("/")
-def index():
-    return "Hello, World!"
 
 if __name__ == '__main__':
     # LOG.info('running environment: %s', os.environ.get('ENV'))

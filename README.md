@@ -11,6 +11,7 @@ Install:
 ## Install on Linux
 ### Python
 Run the following commands:
+
 ```
 sudo apt update
 sudo apt install python3
@@ -27,14 +28,28 @@ Set up the virtual environment
 
 ```
 python3 -m venv venv
-source venv/bin/activate
 ```
 
 Then install requirements
 
 ```
-pip install docker-compose
-pip install -r requirements.txt
+pip3 install -r requirements.txt
+```
+
+Then start up the local environment and run main
+
+```
+source venv/bin/activate
+python3 src/index.py
+```
+
+
+# Running from a Docker container
+
+Then install requirements
+
+```
+pip3 install docker-compose
 ```
 
 Build the docker image
