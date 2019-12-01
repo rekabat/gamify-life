@@ -23,6 +23,34 @@ sudo apt install python3-pip
 Follow [this guide](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 And add yourself to a docker group, to circumvent the need of using `sudo`. See [this guide](https://docs.docker.com/install/linux/linux-postinstall/) on how to do so.
 
+## Install on MacOS
+### Homebrew
+Run the following command in a terminal:
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+### Python
+Run the following command: 
+
+```
+brew install python3
+```
+
+### Docker
+Run the following commands:
+```
+brew install docker docker-machine
+brew cask install virtualbox
+-> need password
+-> possibly need to address System Preference setting
+docker-machine create --driver virtualbox default
+docker-machine env default
+eval "$(docker-machine env default)" # Used to set up any new terminal to connect to Docker daemon (may want to alias)
+```
+[Reference guide](https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
+
 # Running locally
 Set up the virtual environment
 
